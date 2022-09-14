@@ -17,6 +17,13 @@ co = cohere.Client(api_key)
 
 [News Artifact scoring Cohere API](https://github.com/degagawolde/in-context-learning/notebooks/CohereNewsScoring.ipynb)
 
+```
+co.classify(
+      model='medium',  
+      inputs=[text], # the string to be classified
+      examples=examples # a couple of examples - training set
+  )
+```
 ## Text Analysis using DeepAI API
 
 [Text Analysis with DeepAI API](https://github.com/degagawolde/in-context-learning/notebooks/DeepAITextAnlaysis.ipynb)
