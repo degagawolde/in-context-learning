@@ -47,4 +47,7 @@ requests.post(
 
 # What next?
 - News Artifact Scoring
+<<<<<<< HEAD
+- Entity Extraction from job description.
+
 - Entity Extraction from job description.
