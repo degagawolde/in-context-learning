@@ -5,6 +5,13 @@ The complexity, cost, and skills required to produce LLMs is immense. Only large
 
 [Entity Extraction with Cohere API](https://github.com/degagawolde/in-context-learning/notebooks/CohereEntityExtract.ipynb)
 
+***Connect to Cohere API**
+```
+import cohere
+co = cohere.Client(api_key)
+```
+
+
 ## News scoring using the LLMS API
 
 [News Artifact scoring Cohere API](https://github.com/degagawolde/in-context-learning/notebooks/CohereNewsScoring.ipynb)
@@ -12,3 +19,27 @@ The complexity, cost, and skills required to produce LLMs is immense. Only large
 ## Text Analysis using DeepAI API
 
 [Text Analysis with DeepAI API](https://github.com/degagawolde/in-context-learning/notebooks/DeepAITextAnlaysis.ipynb)
+
+***Connect to the DeepAI API and do sentimental analysis on the given text***
+
+```
+requests.post(
+    "https://api.deepai.org/api/sentiment-analysis",
+    data={
+        'text': 'Africa is a land of origin for human kind',
+    },
+    headers={'api-key': api_key}
+)
+```
+
+***Connect to the DeepAI API and do summerize the given text***
+```
+# Example posting a local text file:
+requests.post(
+    "https://api.deepai.org/api/summarization",
+    files={
+        'text': open('../data/experimental/interim.txt', 'rb'),
+    },
+    headers={'api-key': api_key}
+)
+```
