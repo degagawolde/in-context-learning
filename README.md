@@ -5,10 +5,11 @@ The complexity, cost, and skills required to produce LLMs is immense. Only large
 
 [Entity Extraction with Cohere API](https://github.com/degagawolde/in-context-learning/notebooks/CohereEntityExtract.ipynb)
 
-***Connect to Cohere API**
+***Connect to Cohere API***
 ```
 import cohere
 co = cohere.Client(api_key)
+
 ```
 
 
@@ -32,7 +33,7 @@ requests.post(
 )
 ```
 
-***Connect to the DeepAI API and do summerize the given text***
+***Connect to the DeepAI API and summarize the given text***
 ```
 # Example posting a local text file:
 requests.post(
@@ -43,3 +44,8 @@ requests.post(
     headers={'api-key': api_key}
 )
 ```
+
+# What next?
+- News Artifact Scoring
+- Entity Extraction for job description.
+
