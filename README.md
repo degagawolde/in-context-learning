@@ -48,4 +48,3 @@ requests.post(
 # What next?
 - News Artifact Scoring
 - Entity Extraction from job description.
-
