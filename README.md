@@ -11,7 +11,9 @@ import cohere
 co = cohere.Client(api_key)
 ```
 
+
 ## News scoring using the LLMS API
+
 [News Artifact scoring Cohere API](https://github.com/degagawolde/in-context-learning/notebooks/CohereNewsScoring.ipynb)
 
 ## Text Analysis using DeepAI API
