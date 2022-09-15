@@ -51,7 +51,12 @@ requests.post(
     headers={'api-key': api_key}
 )
 ```
+# Streamlit Dashboard 
+***code***
+[dashboard](https://github.com/degagawolde/in-context-learning/setup.py)
 
+***Access The Dashboard***
+[app](https://github.com/degagawolde/in-context-learning/setup.py)
 # What next?
 - News Artifact Scoring
 - Entity Extraction from job description.
