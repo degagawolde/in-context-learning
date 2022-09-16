@@ -8,7 +8,7 @@ class MultipleApp:
     def __init__(self):
         self.apps = []
 
-    def add_app(self, title, func,data):
+    def add_app(self, title, func,data=None):
 
         self.apps.append({
             "title": title,
