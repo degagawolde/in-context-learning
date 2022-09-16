@@ -137,7 +137,6 @@ Keras-Preprocessing==1.1.2
 kiwisolver==1.4.4
 kombu==5.2.4
 libclang==14.0.6
-libmambapy==0.25.0
 llvmlite==0.38.1
 Mako==1.2.2
 mamba==0.25.0
