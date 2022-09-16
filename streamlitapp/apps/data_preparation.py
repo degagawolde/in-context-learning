@@ -12,6 +12,8 @@ import numpy as np
 import pandas as pd
 
 
-def news_scoring(df: pd.DataFrame):
+def data_preparation(df: pd.DataFrame):
 
-    st.write('### News Artifact Scoring')
+    st.write('# Promt Design')
+    st.write('## Prompt Desigin for the Scoring')
+    st.write('## Prompt Design for the Entity Extraction')

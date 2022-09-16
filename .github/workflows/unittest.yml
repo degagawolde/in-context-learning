@@ -1,55 +1,51 @@
-# name: GitHub Actions Test
-# on:
-#   push:
-#     branches:
-#       - "main"
-#   pull_request:
-#     branches:
-#       - "main"
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
+name: GitHub Actions Test
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
+jobs:
+  test:
+    runs-on: ubuntu-latest
 
-#     strategy:
-#       matrix:
-#         # Run in all these versions of Python
-#         python-version: [3.9, 3.10]
+    strategy:
+      matrix:
+        # Run in all these versions of Python
+        python-version: [3.9, 3.10]
 
-#     steps:
-#         # Checkout the latest code from the repo
-#       - name: Checkout repo
-#         uses: actions/checkout@v3
-#         # Setup which version of Python to use
-#       - name: Set Up Python 3.10
-#         uses: actions/setup-python@v3
-#         with:
-#           python-version: "3.10"
-#         # Display the Python version being used
-#       - name: Display Python version
-#         run: python -c "import sys; print(sys.version)"
-#         # Install the Dependencies using pip
-#       - name: Install Dependencies
-#         run: |
-#           pip install Cython
-#           python -m pip install --upgrade pip
-#           pip install -r requirements.txt
+    steps:
+        # Checkout the latest code from the repo
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        # Setup which version of Python to use
+      - name: Set Up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+        # Display the Python version being used
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+        # Install the Dependencies using pip
+      - name: Install Dependencies
+        run: |
+          pip install Cython
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-#       - name: Fetch Dataset
-#         env:
-#           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#           GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
-#         run: |
-#           mkdir -p .dvc/tmp
-#           touch .dvc/tmp/gdrive-user-credentials.json
-#           echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
-#           dvc pull -r dvc_remote 
+      # - name: Fetch Dataset
+      #   env:
+      #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+      #   run: |
+      #     mkdir -p .dvc/tmp
+      #     touch .dvc/tmp/gdrive-user-credentials.json
+      #     echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
+      #     dvc pull -r dvc_remote 
 
-#       - name: Run tests 
-#         env:
-#           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#           GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
-#         run: |
-#           mkdir -p .dvc/tmp
-#           touch .dvc/tmp/gdrive-user-credentials.json
-#           echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
-#           python -m unittest tests/test_dvc.py
+      - name: Run tests 
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python -m unittest tests/test*
