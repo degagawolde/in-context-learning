@@ -10,10 +10,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        # Run in all these versions of Python
-        python-version: [3.9, 3.10]
+    # strategy:
+    #   matrix:
+    #     # Run in all these versions of Python
+    #     python-version: [3.9, 3.10]
 
     steps:
         # Checkout the latest code from the repo
