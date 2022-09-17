@@ -57,9 +57,9 @@ requests.post(
 )
 ```
 # Streamlit Dashboard frontend and Fast API backend
-***streamlit dashboard*** [streamlitapp/main.py](https://github.com/degagawolde/in-context-learning/streamlitapp)
+***streamlit dashboard*** [streamlitapp/main.py](https://github.com/degagawolde/in-context-learning/main/streamlitapp)
 
-***Fast API*** [backend/backend_main.py](https://github.com/degagawolde/in-context-learning/backend)
+***Fast API*** [backend/backend_main.py](https://github.com/degagawolde/in-context-learning/tree/main/backend)
 
 # Author
 @degagawolde
