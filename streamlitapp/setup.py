@@ -12,9 +12,9 @@ app = MultipleApp()
 
 # Add all your application her
 
-app.add_app("Prompt Design",data_preparation.data_preparation,pd.DataFrame())
+app.add_app("Prompt Design",data_preparation.data_preparation,pd.DataFrame)
 app.add_app("Entity Extraction", entity_extraction.entity_extraction,pd.DataFrame)
-app.add_app('News Artifact Scoring', news_scoring.news_scoring, pd.DataFrame())
+app.add_app('News Artifact Scoring', news_scoring.news_scoring, pd.DataFrame)
 
 # The main app
 app.run()

@@ -1,10 +1,3 @@
-# import packages
-from multiprocessing.sharedctypes import Value
-from urllib import response
-import missingno as msno
-import matplotlib.pyplot as plt
-import plotly.express as px
-from sklearn.cluster import KMeans
 import streamlit as st
 
 import os
@@ -33,6 +26,7 @@ def entity_extraction(df: pd.DataFrame):
     st.write('## Entity Extraction From Job Description')
     
     form = st.form(key='entity-form')
+    
     jdes = form.text_input('Job Description', 'Job description here!')
     
     model = form.selectbox('Select Model',('xlarge','large','medium','small'))
@@ -52,8 +46,13 @@ def entity_extraction(df: pd.DataFrame):
     submit = form.form_submit_button(label="Submit", help=None,
                                      on_click=None, args=None, kwargs=None)
     
+    st.write('Extracted Entity')
     if submit:
-        ent = get_entity(jds = {"document":jdes})
-        st.write('### Extracted Entity')
-        st.write(ent)
+        ent = get_entity(
+            jds={'document': jdes, 'model': model, 
+                 'temperature': temperature,'token':token,
+                 'top_k':top_k,'top_p':top_p,
+                 'freq_p':freq_p,'pres_p':pres_p})
+         
+        st.write(json.loads(ent))
   
