@@ -60,6 +60,6 @@ requests.post(
 ***streamlit dashboard*** [streamlitapp/main.py](https://github.com/degagawolde/in-context-learning/streamlitapp/main.py)
 
 ***Fast API*** [backend/backend_main.py](https://github.com/degagawolde/in-context-learning/backend/backend_main.py)
-# What next?
-- News Artifact Scoring
-- Entity Extraction from job description.
+
+# Author
+@degagawolde
