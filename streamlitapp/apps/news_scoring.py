@@ -1,9 +1,8 @@
 # import packages
-import missingno as msno
-import matplotlib.pyplot as plt
-import plotly.express as px
-from sklearn.cluster import KMeans
 import streamlit as st
+
+import json
+import requests
 
 import os
 import sys
@@ -11,17 +10,27 @@ import logging
 import numpy as np
 import pandas as pd
 
-def get_score(title:str,description:str,body:str):
-    return 1,90
+def get_score(news:dict):
+
+    header = {'Content-Type': 'application/json'}
+# url = "http://backend.docker:8000/prediction"
+    url = "http://localhost:8000/dnewscore"
+    
+    payload = json.dumps(news)
+    print(payload)
+    response = requests.request("POST", url, headers=header, data=payload)
+    response = response.text
+
+    return response
+
 
 def news_scoring(df: pd.DataFrame):
 
     st.write('### News Artifact Scoring')
     form = st.form(key='score-form')
-    title = form.text_input('Title', 'Title here!')
-    desciption = form.text_input('Description', 'Description here!')
-    body = form.text_input('Body', 'Body here!')
-    
+
+    document_part = form.selectbox('Select Document Part',('Title','Description','Body')) 
+    document = form.text_input('Document', 'Document here!')
     model = form.selectbox(
         'Select Model', ('xlarge', 'large', 'medium', 'small'))
     form.write('Set model parameters(using the default values is recommended).')
@@ -36,9 +45,15 @@ def news_scoring(df: pd.DataFrame):
                          min_value=0.0, max_value=1.0)
     pres_p = form.slider(label='Presence Penalty', step=0.1, value=0.5,
                          min_value=0.0, max_value=1.0)
+    
     submit = form.form_submit_button(label="Submit", help=None,
                           on_click=None, args=None, kwargs=None)
-
+    st.write('score')
     if submit:
-        score,prob = get_score(title=title,description=desciption,body=body)
-        st.write('The news has {} with {} probability'.format(score,prob))
+        score = get_score(
+            news={'document': document, 'document_part': document_part, 'model': model,
+                      'temperature': temperature, 'token': token,
+                      'top_k': top_k, 'top_p': top_p,
+                      'freq_p': freq_p, 'pres_p': pres_p})
+        
+        st.write(json.loads(score))
