@@ -6,7 +6,7 @@ Large Language Model(LLMS) can be used for multiple use in business and social p
 The objective of this challenge is to generate prompts for LLMs to ***extract*** relevant entities from
 job descriptions and also to ***classify*** news artifacts given only a few examples of human scores
 
-## Named entity recognition using the LLMS API
+## entity extraction using the LLMS API
 ![entity](https://camo.githubusercontent.com/bee6479e52d74c33a02b87a01106be06b1e823d579587eeafe5154ec4222b98b/68747470733a2f2f6769746875622e636f6d2f636f686572652d61692f6e6f7465626f6f6b732f7261772f6d61696e2f6e6f7465626f6f6b732f696d616765732f6b6579776f72642d65787472616374696f6e2d6770742d6d6f64656c732e706e67)
 [Entity Extraction with Cohere API](https://github.com/degagawolde/in-context-learning/notebooks/CohereEntityExtract.ipynb)
 
