@@ -58,10 +58,10 @@ requests.post(
 ```
 # Streamlit Dashboard and frontend
 ***code***
-[dashboard](https://github.com/degagawolde/in-context-learning/streamlitapp/main.py)
+code [streamlitapp/main.py](https://github.com/degagawolde/in-context-learning/streamlitapp/main.py)
 
 ***Fast Api backend***
-[app](https://github.com/degagawolde/in-context-learning/backend/backend_main.py)
+code [backend/backend_main.py](https://github.com/degagawolde/in-context-learning/backend/backend_main.py)
 # What next?
 - News Artifact Scoring
 - Entity Extraction from job description.
