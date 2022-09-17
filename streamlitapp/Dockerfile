@@ -11,4 +11,4 @@ COPY . /app
 EXPOSE 8501
 
 ENTRYPOINT ["streamlit","run"]
-CMD ["frontend_main.py"]
+CMD ["main.py"]

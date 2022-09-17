@@ -56,12 +56,12 @@ requests.post(
     headers={'api-key': api_key}
 )
 ```
-# Streamlit Dashboard 
+# Streamlit Dashboard and frontend
 ***code***
-[dashboard](https://github.com/degagawolde/in-context-learning/setup.py)
+[dashboard](https://github.com/degagawolde/in-context-learning/streamlitapp/main.py)
 
-***Access The Dashboard***
-[app](https://github.com/degagawolde/in-context-learning/setup.py)
+***Fast Api backend***
+[app](https://github.com/degagawolde/in-context-learning/backend/backend_main.py)
 # What next?
 - News Artifact Scoring
 - Entity Extraction from job description.
