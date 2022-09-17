@@ -1,4 +1,7 @@
-data/
+data/entity/ralations_test.txt
+data/entity/ralations_dev.txt
+data/experimental/
+data/output/
 notebooks/.ipynb_checkpoints
 .history/
 config/
