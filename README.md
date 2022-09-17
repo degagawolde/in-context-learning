@@ -60,6 +60,7 @@ requests.post(
 ***streamlit dashboard*** [streamlitapp/main.py](https://github.com/degagawolde/in-context-learning/tree/main/streamlitapp)
 
 ***Fast API*** [backend/backend_main.py](https://github.com/degagawolde/in-context-learning/tree/main/backend)
-[APP](https://youtu.be/JxwDzp1k_wU)
+
+***Watch the*** [APP](https://youtu.be/JxwDzp1k_wU)
 # Author
 @degagawolde
