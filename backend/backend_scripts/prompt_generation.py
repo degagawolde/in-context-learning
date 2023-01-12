@@ -34,4 +34,4 @@ class CohereClassifier:
             inputs=[text],
             examples=self.examples
         )
-        return classifications.classifications[0].prediction, classifications.classifications[0].confidence['']
+        return classifications.classifications
