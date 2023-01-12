@@ -17,7 +17,7 @@ class Preporcess:
             label += k+':'+v+"\n"
         return label
     
-    def preprocess_document(self,train_df:pd.DataFrame):
+    def preprocess_document(self, train_df: pd.DataFrame, filepath='../data/output/training_prompt.txt'):
 
         train_doc = []
         for i in range(train_df.shape[0]):
@@ -27,7 +27,7 @@ class Preporcess:
                 train_doc.append(docu+"\n\nExtracted Text:" +
                                 '\n'+ent+"----\n")
 
-        with open('../data/output/training_prompt.txt', 'w') as f:
+        with open(filepath, 'w') as f:
             for item in train_doc:
                 # write each item on a new line
                 f.write("%s\n" % item.strip())
